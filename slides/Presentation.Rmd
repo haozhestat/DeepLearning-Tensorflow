@@ -2,7 +2,13 @@
 title: "Introduction to Deep Learning and Tensorflow"
 author: "Dapeng Hu, Qinglong Tian, Haozhe Zhang, Min Zhang"
 date: "April 25, 2017"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    incremental: true
+    widescreen: true
+    smaller: true
+    transition: 0.5
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## A Neuron Model {.smaller .columns-2}
 ![](figures/neuron_model.png)
 
-## A Neuron Model
+## A Neuron Model 
 
 - The weights of the neuron are the parameters of the model.
 - The input is computed as a weighted sum of the inputs.
@@ -25,74 +31,37 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Single-layer Neural Network 
 
-![](figures/singlelayer_network1.png)
+<div class="columns-2">
+![](figures/singlelayer_network1.png){.build}
+
+  - Bullet 1
+  - Bullet 2
+  - Bullet 3
+</div>
+
 
 ## Single-layer Neural Network 
+```{r, echo = FALSE}
+shinyApp(
+  ui = fluidPage(
+    selectInput("region", "Region:", 
+                choices = colnames(WorldPhones)),
+    plotOutput("phonePlot")
+  ),
+  
+  server = function(input, output) {
+    output$phonePlot <- renderPlot({
+      barplot(WorldPhones[,input$region]*1000, 
+              ylab = "Number of Telephones", xlab = "Year")
+    })
+  },
+  
+  options = list(height = 500)
+)
+```
 
 ## Multiple-layer Neural Network 
 
 ![](figures/multilayer_network.png)
 
 ## The Back-Propagation Algorithm
-
-## Two-Column Attempt {.smaller}
-
-<div class="columns-2">
-Base graphics can be quick...
-
-```{r, fig.width = 3, fig.height = 4}
-par_opts <- names(par())
-    hist(nchar(par_opts),
-         breaks = seq(1.5, 9.5, by = 1))
-```
-
-But `ggplot2` can be quick too:
-
-```{r, fig.width = 2.5, fig.height = 2.5}
-require(ggplot2, quietly = T)
-qplot(factor(nchar(par_opts)))
-```
-</div>
-
-## Two-Column Attempt: Taller Hist {.smaller}
-
-<div class="columns-2">
-Base graphics can be quick...
-
-```{r, fig.width = 3, fig.height = 6}
-par_opts <- names(par())
-    hist(nchar(par_opts),
-         breaks = seq(1.5, 9.5, by = 1))
-```
-
-But `ggplot2` can be quick too:
-
-```{r, fig.width = 2.5, fig.height = 2.5}
-require(ggplot2, quietly = T)
-qplot(factor(nchar(par_opts)))
-```
-</div>
-
-## Two-Column Attempt: Extra div {.smaller}
-
-<div class="columns-2">
-
-Base graphics can be quick...
-
-```{r, fig.width = 3, fig.height = 4}
-par_opts <- names(par())
-    hist(nchar(par_opts),
-         breaks = seq(1.5, 9.5, by = 1))
-```
-
-<div>
-...
-</div>
-
-But `ggplot2` can be quick too:
-
-```{r, fig.width = 2.5, fig.height = 2.5}
-require(ggplot2, quietly = T)
-qplot(factor(nchar(par_opts)))
-```
-</div>
