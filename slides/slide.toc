@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{History}{3}{0}{1}
-\beamer@sectionintoc {2}{Neural Network}{5}{0}{2}
-\beamer@sectionintoc {3}{Convolutional Neural Network}{16}{0}{3}
-\beamer@sectionintoc {4}{TensorFlow}{31}{0}{4}
+\beamer@sectionintoc {1}{History of Neural Network}{3}{0}{1}
+\beamer@sectionintoc {2}{Neural Network}{12}{0}{2}
+\beamer@sectionintoc {3}{Convolutional Neural Network}{24}{0}{3}
+\beamer@sectionintoc {4}{TensorFlow}{40}{0}{4}
