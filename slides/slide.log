@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 APR 2017 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 APR 2017 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1592,7 +1592,7 @@ File: figures/Picture9.png Graphic file (type png)
 
 <use figures/Picture9.png>
 Package pdftex.def Info: figures/Picture9.png used on input line 299.
-(pdftex.def)             Requested size: 245.83282pt x 106.05249pt.
+(pdftex.def)             Requested size: 307.28987pt x 132.57083pt.
  [28
 
  <./figures/Picture9.png>]
@@ -1601,7 +1601,7 @@ File: figures/Picture10.png Graphic file (type png)
 
 <use figures/Picture10.png>
 Package pdftex.def Info: figures/Picture10.png used on input line 306.
-(pdftex.def)             Requested size: 245.83282pt x 161.2381pt.
+(pdftex.def)             Requested size: 307.28987pt x 201.55075pt.
  [29
 
  <./figures/Picture10.png>]
@@ -1609,10 +1609,7 @@ Package pdftex.def Info: figures/Picture10.png used on input line 306.
 File: figures/MNIST1.png Graphic file (type png)
  <use figures/MNIST1.png>
 Package pdftex.def Info: figures/MNIST1.png used on input line 316.
-(pdftex.def)             Requested size: 169.01036pt x 135.20596pt.
-
-Overfull \vbox (3.04395pt too high) detected at line 316
- []
+(pdftex.def)             Requested size: 276.56233pt x 122.91397pt.
 
 [30
 
@@ -1747,7 +1744,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb>
-Output written on slide.pdf (39 pages, 3790547 bytes).
+Output written on slide.pdf (39 pages, 3790548 bytes).
 PDF statistics:
  358 PDF objects out of 1000 (max. 8388607)
  245 compressed objects within 3 object streams
