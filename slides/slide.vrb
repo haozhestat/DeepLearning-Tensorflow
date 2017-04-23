@@ -1,0 +1,13 @@
+\frametitle{code}
+\begin{lstlisting}[language=JavaScript, caption=My Javascript Example]
+function someReducer(state = initialState, action) {
+  switch (action.type) {
+  case 'FOO':
+    return Object.assign({}, state, {
+      foo: action.payload.foo
+    });
+  default:
+    return state;
+  }
+}
+\end{lstlisting}

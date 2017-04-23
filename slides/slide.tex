@@ -7,6 +7,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{color}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
 %\usepackage{subfig}
 \usepackage{bm}
 \usepackage{subfigure}
@@ -62,12 +64,11 @@
 \begin{document}
 \maketitle
 
-\begin{frame}
-	\begin{figure}
-		\includegraphics[width=0.59\linewidth]{style_transfer.png}
-	\end{figure}
-	
-\end{frame}
+%\begin{frame}
+%	\begin{figure}
+%		\includegraphics[width=0.59\linewidth]{style_transfer.png}
+%	\end{figure}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Content}
@@ -76,26 +77,10 @@
 \end{frame}
 
 
-\section{Why Deep Learning?}
-\begin{frame}
-	\frametitle{More Hidden Layers?}
-	\begin{itemize}
-		\item The signal is getting weaker
-\item Non-convex problem
-\item Slow Convergence
-\item Weakness of Gradient Descent: Local Optima
-	\end{itemize}
-\end{frame}
+%\section{Why Deep Learning?}
 
-\begin{frame}
-	\frametitle{Breakthrough}
-	{\small Hinton, G. E., \& Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.}
-	\begin{figure}
-		\includegraphics[width=0.95\linewidth]{breakthrough}
-	\end{figure}
-\end{frame}
 
-\section{Neural Network}
+\section{History}
 
 \begin{frame}
 	\frametitle{History of Neural Networks}
@@ -108,6 +93,7 @@ Neural Networks
 \end{itemize}
 \end{frame}
 
+\section{Neural Network}
 \begin{frame}
 	\frametitle{A Neuron Model}
 	\begin{figure}
@@ -183,7 +169,23 @@ Neural Networks
 	\end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{More Hidden Layers?}
+	\begin{itemize}
+		\item The signal is getting weaker
+		\item Non-convex problem
+		\item Slow Convergence
+		\item Weakness of Gradient Descent: Local Optima
+	\end{itemize}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Breakthrough}
+	{\small Hinton, G. E., \& Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.}
+	\begin{figure}
+		\includegraphics[width=0.95\linewidth]{breakthrough}
+	\end{figure}
+\end{frame}
 
 \section{Convolutional Neural Network}
 \begin{frame}
@@ -234,131 +236,257 @@ The same pattern appears in different regions.
 
 \begin{frame}
 	\frametitle{How does convolution work?}
+	The whole Convolutional neural network:
 	\begin{figure}
-	\includegraphics[width=0.9\linewidth]{dog_flow}
+	\includegraphics[width=0.8\linewidth]{Picture1}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{How does convolution work?}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_1}
+	\includegraphics[width=0.8\linewidth]{Picture2}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{How does convolution work?}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_2}
+	\includegraphics[width=0.8\linewidth]{Picture3}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{How does convolution work?}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_3}
+	\includegraphics[width=0.8\linewidth]{Picture4}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Connection between CNN and Fully Connected Neural Network}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_4}
+		\includegraphics[width=0.8\linewidth]{Picture5}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Connection between CNN and Fully Connected Neural Network}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_5}
+	\includegraphics[width=0.8\linewidth]{Picture6}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{How does max pooling work?}
 	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{cnn_procedure_6}
+		\includegraphics[width=0.8\linewidth]{Picture7}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{How does max pooling work?}
 	\begin{figure}
-		\includegraphics[width=0.95\linewidth]{cnn_procedure_7}
+	\includegraphics[width=0.8\linewidth]{Picture8}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{After convolution and max pooling}
 	\begin{figure}
-		\includegraphics[width=\linewidth]{cnn_procedure_8}
+	\includegraphics[width=0.8\linewidth]{Picture9}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{How does Flatten work?}
+	\begin{figure}
+	\includegraphics[width=0.8\linewidth]{Picture10}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Example of CNN: MNIST}
+	The MNIST dataset contains images of handwritten digits like below. Each image is 28 pixels by 28 pixels. It also includes labels for each image, telling us which digit it is. Next, we are going to train a model to look at images and predict which digits they are.
+	\begin{figure}
+		\includegraphics[width=0.55\linewidth]{MNIST1}
 	\end{figure}
 \end{frame}
 
 \section{TensorFlow}
-\begin{frame}[fragile]{Lists}
-Items
-\begin{easylist}[itemize]
-@ Milk
-@ Eggs
-@ Potatos
-\end{easylist}
-
-Enumerations
-\begin{enumerate}
-\item First, \item Second and \item Last.
-\end{enumerate}
-
-Descriptions
-\begin{description}
-\item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
-\end{description}
+\begin{frame}
+	\frametitle{TensorFlow}
+	
+\vspace{0.5in}
+About TensorFlow:
+\begin{itemize}
+	\item Tensorflow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, which the graph edges represent the multidimensional data arrays (tensors) communicated between them. 
+	\item It allows you to deploy computation to one or more CPUs or GPUs in d desktop, server, or mobile device with a single API. The Tensorflow package provide access to the complete Tensorflow API from within R. 
+\end{itemize}
+%	\begin{figure}
+%		\includegraphics[width=0.55\linewidth]{tensorflow_logo}
+%	\end{figure}
+	\begin{textblock*}{5cm}(10cm,1cm) % {block width} (coords)
+		\includegraphics[width=2.5cm]{tensorflow_logo}
+	\end{textblock*}
 \end{frame}
 
-\begin{frame}[fragile]{Tables}
-\begin{table}
-\caption{Largest cities in the world (source: Wikipedia)}
-\begin{tabular}{lr}
-\toprule
-City & Population\\
-\midrule
-Mexico City & 20,116,842\\
-Shanghai & 19,210,000\\
-Peking & 15,796,450\\
-Istanbul & 14,160,467\\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{frame}
+	\frametitle{MNIST}
+mnist\$train\$image is a tensor (an n-dimensional array) with shape ($55000$L, $784$L). 
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{MNIST2}
+	\end{figure}
 \end{frame}
 
-\begin{frame}{Blocks}
-Three different block environments are pre-defined and may be styled with an
-optional background color.
 
-%   Color Box: Light Orange
-\setbeamercolor{boxsthlmLightOrange}{bg=white,fg=pblue}
-\begin{beamercolorbox}[wd=\linewidth,ht=10ex,dp=3ex]{boxsthlmLightOrange}
-\centering
-\texttt{Light Orange}\\
-\vspace{1em}
-\tiny{RGB:  255,215,210} \\
-\tiny{hex: \#ffd7d2}
-\end{beamercolorbox}
+\begin{frame}
+	\frametitle{MNIST}
+	The label is ``one-hot vectors". \\
+	For example, $3$ would be [$0,0,0,1,0,0,0,0,0,0$]\.\
+	mnist\$train\$labels is a tensor with shape ($55000$L, $10$L). 
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{MNIST3}
+	\end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{code}
-\begin{lstlisting}[language=JavaScript, caption=My Javascript Example]
-function someReducer(state = initialState, action) {
-  switch (action.type) {
-  case 'FOO':
-    return Object.assign({}, state, {
-      foo: action.payload.foo
-    });
-  default:
-    return state;
-  }
-}
-\end{lstlisting}
+\begin{frame}
+	\frametitle{MNIST}
+	Why do we have 2 layers, not more?\\
+	Vanishing Gradient Problem $\longrightarrow$ Deeper does not usually imply better.
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{Picture14}
+	\end{figure}
 \end{frame}
+
+\begin{frame}
+	\frametitle{MNIST}
+Activation function: Rectified Linear Unit (ReLU)\\
+Reason:
+\begin{itemize}
+		\item Infinite sigmoid with different biases
+		\item Able to handle vanishing gradient problem
+	\item Fast to compute
+	\item Biological reason
+\end{itemize}
+\vspace{1.5in}
+
+\begin{textblock*}{5cm}(7cm,4cm) % {block width} (coords)
+	\includegraphics[width=5cm]{Picture15}
+\end{textblock*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{MNIST}
+Dropout: when you do training, each time before updating the parameters, each neuron has p\% to dropout.
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{Picture16}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Style Transfer}
+\begin{center}
+Style Transfer, A.K.A. Deep Style
+\end{center}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{Picture17}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Style Transfer}
+\begin{center}
+	Style Transfer, A.K.A. Deep Style
+\end{center}
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{style_transfer}
+	\end{figure}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Style Transfer}
+%		\begin{figure}
+%			\hfill
+%			\includegraphics[width=0.5\linewidth]{style_transfer}
+%			\hfill
+%			Thank you!\\
+%			
+%			
+%			Good luck with your finals!
+%			\vspace{2in}
+%			\hfill
+%		\end{figure}
+%\end{frame}
+
+
+%
+%
+%\begin{frame}[fragile]{Lists}
+%Items
+%\begin{easylist}[itemize]
+%@ Milk
+%@ Eggs
+%@ Potatos
+%\end{easylist}
+%
+%Enumerations
+%\begin{enumerate}
+%\item First, \item Second and \item Last.
+%\end{enumerate}
+%
+%Descriptions
+%\begin{description}
+%\item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
+%\end{description}
+%\end{frame}
+%
+%\begin{frame}[fragile]{Tables}
+%\begin{table}
+%\caption{Largest cities in the world (source: Wikipedia)}
+%\begin{tabular}{lr}
+%\toprule
+%City & Population\\
+%\midrule
+%Mexico City & 20,116,842\\
+%Shanghai & 19,210,000\\
+%Peking & 15,796,450\\
+%Istanbul & 14,160,467\\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+%\end{frame}
+%
+%\begin{frame}{Blocks}
+%Three different block environments are pre-defined and may be styled with an
+%optional background color.
+%
+%%   Color Box: Light Orange
+%\setbeamercolor{boxsthlmLightOrange}{bg=white,fg=pblue}
+%\begin{beamercolorbox}[wd=\linewidth,ht=10ex,dp=3ex]{boxsthlmLightOrange}
+%\centering
+%\texttt{Light Orange}\\
+%\vspace{1em}
+%\tiny{RGB:  255,215,210} \\
+%\tiny{hex: \#ffd7d2}
+%\end{beamercolorbox}
+%\end{frame}
+%
+%\begin{frame}[fragile]{code}
+%\begin{lstlisting}[language=JavaScript, caption=My Javascript Example]
+%function someReducer(state = initialState, action) {
+%  switch (action.type) {
+%  case 'FOO':
+%    return Object.assign({}, state, {
+%      foo: action.payload.foo
+%    });
+%  default:
+%    return state;
+%  }
+%}
+%\end{lstlisting}
+%\end{frame}
 
 \end{document}
