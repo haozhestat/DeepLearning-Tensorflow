@@ -7,6 +7,9 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{color}
+\usepackage{hyperref}
+
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}  
 \usepackage[absolute,overlay]{textpos}
 \usepackage{graphicx}
 %\usepackage{subfig}
@@ -54,7 +57,7 @@
    captionpos=b
 }
 
-\title{Deep Learning and TensorFlow}
+\title{Neural Network and TensorFlow}
 \date{\today}
 \author{Dapeng Hu, Qinglong Tian, Haozhe Zhang, Min Zhang}
 \institute{STAT 580 Statistical Computing\\Department of Statistics\\ Iowa State University}
@@ -80,7 +83,7 @@
 %\section{Why Deep Learning?}
 
 
-\section{History}
+\section{History of Neural Network}
 
 \begin{frame}
 	\frametitle{History of Neural Networks}
@@ -93,16 +96,87 @@ Neural Networks
 \end{itemize}
 \end{frame}
 
-\section{Neural Network}
 \begin{frame}
-	\frametitle{A Neuron Model}
-	\begin{figure}
-		\includegraphics[width=\linewidth]{neuron_model.png}
-	\end{figure}
+	\frametitle{The 1940s: The Beginning of Neural Networks}
+	McCulloch and Pitts, 1943
+	\begin{itemize}
+		\item Employed logic and mathematical notion of
+		computation to explain how neural mechanism
+		might realize mental functions.
+		\item Commonly regarded as the inception of artificial
+		neural networks.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The 1940s: The Beginning of Neural Networks}
+	McCulloch and Pitts, 1943
+	\begin{itemize}
+		\item Employed logic and mathematical notion of
+		computation to explain how neural mechanism
+		might realize mental functions.
+		\item Commonly regarded as the inception of artificial
+		neural networks.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The 1940s: The Beginning of Neural Networks}
+	Hebb’s Learning Rule:
+	\begin{itemize}
+		\item  Connectionism
+		\item  A method of determining how to alter the weights between model neurons.
+	\end{itemize}
+		\begin{figure}
+			\includegraphics[width=0.8\linewidth]{image315}
+		\end{figure}
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{The 1950s and 1960s: First Golden Age of Neural Networks}
+	Perceptron (Rosenblatt’s perceptron), 1957
+\begin{figure}
+	\includegraphics[width=0.75\linewidth]{perceptron-2}
+\end{figure}
+\end{frame}
 
+\begin{frame}
+	\frametitle{The 1970s: The Quiet Years}
+	Marvin Minsky
+	\begin{itemize}
+		\item  “Perceptron”, 1969.
+		\item “Fatal flaw” of the perceptron; inability to solve
+		non-linear problems.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The 1970s: The Quiet Years}
+	Kunihiko Fukishima
+	\begin{itemize}
+		\item  Neocognitron
+	\end{itemize}
+	Teuvo Kohonen
+	\begin{itemize}
+		\item  Self-Organizing Map (SOM) algorithm
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The 1980s: Renewed Enthusiasm}
+	John Hopfield
+	\begin{itemize}
+		\item  Hopfield Neural Network, 1982
+	\end{itemize}
+	Geoffrey Hinton, etc.
+	\begin{itemize}
+		\item  Blotzmann Machine
+		\item Back-propagation (BP) algorithm
+	\end{itemize}
+\end{frame}
+
+\section{Neural Network}
 \begin{frame}
 	\frametitle{A Neuron Model}
 \begin{itemize}
@@ -183,7 +257,7 @@ Neural Networks
 
 \begin{frame}
 	\frametitle{Breakthrough}
-	{\small Hinton, G. E., \& Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.}
+	{\small Hinton, G. E., \& Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. Science, 313(5786), 504-507.}
 	\begin{figure}
 		\includegraphics[width=0.95\linewidth]{breakthrough}
 	\end{figure}
@@ -191,7 +265,14 @@ Neural Networks
 
 \section{Convolutional Neural Network}
 \begin{frame}
-\frametitle{CNN}
+	\frametitle{CNN}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{cnn_tv_dapeng}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why CNN?}
 \begin{itemize}
 	\item Fully connected neural network can bring us too many parameters.
 	\item Some patterns are much smaller than the whole image.
@@ -209,7 +290,7 @@ Neural Networks
 
 
 \begin{frame}
-	\frametitle{CNN}
+	\frametitle{Why CNN?}
 The same pattern appears in different regions.
 	
 	\begin{figure}
@@ -223,7 +304,7 @@ The same pattern appears in different regions.
 \end{frame}
 
 \begin{frame}
-	\frametitle{CNN}
+	\frametitle{Why CNN?}
 	Subsampling the pixels will not change the object.
 	
 	\begin{figure}
@@ -237,71 +318,70 @@ The same pattern appears in different regions.
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does convolution work?}
-	The whole Convolutional neural network:
+	\frametitle{Whole Structure}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture1}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does convolution work?}
+	\frametitle{How convolution works?}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture2}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does convolution work?}
+	\frametitle{How convolution works?}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture3}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does convolution work?}
+	\frametitle{How convolution works?}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture4}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Connection between CNN and Fully Connected Neural Network}
+	\frametitle{Connection between CNN and Neural Network}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{Picture5}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Connection between CNN and Fully Connected Neural Network}
+	\frametitle{Connection between CNN and Neural Network}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture6}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does max pooling work?}
+	\frametitle{Max pooling}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{Picture7}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does max pooling work?}
+	\frametitle{Max pooling}
 	\begin{figure}
 	\includegraphics[width=0.8\linewidth]{Picture8}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{After convolution and max pooling}
+%	\frametitle{After convolution and max pooling}
 	\begin{figure}
 	\includegraphics[width=\linewidth]{Picture9}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	\frametitle{How does Flatten work?}
+	\frametitle{Flatten}
 	\begin{figure}
 	\includegraphics[width=\linewidth]{Picture10}
 	\end{figure}
@@ -312,9 +392,13 @@ The same pattern appears in different regions.
 \begin{frame}
 	\frametitle{Example of CNN: MNIST}
 	The MNIST dataset contains images of handwritten digits like below. Each image is 28 pixels by 28 pixels. It also includes labels for each image, telling us which digit it is. Next, we are going to train a model to look at images and predict which digits they are.
+	
+	\href{https://www.youtube.com/watch?v=FwFduRA_L6Q}{ \textit{\textcolor{pblue}{First Convolutional Network Demo from 1993}}}
+	
 	\begin{figure}
 		\includegraphics[width=0.9\linewidth, height=0.4\linewidth]{MNIST1}
 	\end{figure}
+	
 \end{frame}
 
 \section{TensorFlow}
@@ -407,7 +491,7 @@ Style Transfer, A.K.A. Deep Style
 		\includegraphics[width=0.5\linewidth]{style_transfer}
 	\end{figure}
 \end{frame}
-
+%
 %\begin{frame}
 %	\frametitle{Style Transfer}
 %		\begin{figure}
@@ -422,8 +506,8 @@ Style Transfer, A.K.A. Deep Style
 %			\hfill
 %		\end{figure}
 %\end{frame}
-
-
+%
+%
 %
 %
 %\begin{frame}[fragile]{Lists}
