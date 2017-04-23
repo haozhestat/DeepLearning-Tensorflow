@@ -181,12 +181,19 @@ Neural Networks
 \section{Neural Network}
 \begin{frame}
 	\frametitle{A Neuron Model}
+	\begin{figure}
+		\includegraphics[width=0.95\linewidth]{neuron_model}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Neuron Model}
 \begin{itemize}
 	\item The weights of the neuron are the parameters of the model.
 	\item The input is computed as a weighted sum of the inputs.
 	\item The activation function determines the output and can be different functions.
 	\item The output is obtained by applying the activation function to the input.
-	\item How does the neuron work?
+	\item \href{https://appliedgo.net/perceptron/}{ \textcolor{pblue}{How does the neuron work?}}
 \end{itemize}
 \end{frame}
 
@@ -237,6 +244,27 @@ Neural Networks
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{singlelayer_network.png}
 	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Backpropagation Algorithm}
+\begin{itemize}
+	\item For the output layer
+	\begin{equation*}
+	\Delta \omega_{jk}^{h+1} = \eta\delta_{k}^{h+1}y_{j}^{h}=\eta(d_{k}-o_{k})o_{k}(1-o_{k})y_{j}^{h},
+	\end{equation*}
+	where $j=0,\ldots, m_{h}$, $k=1,\ldots,\ell$.
+	\item For the $h$th hidden layer
+		\begin{equation*}
+		\Delta \omega_{ij}^{h} =\eta \delta_{j}^{h}y_{i}^{h-1} = \eta\left(\sum_{k=1}^{l}\delta_{k}^{o}\omega_{jk}^{h+1}\right)y_{j}^{h}(1-y_{j}^{h})y_{i}^{h-1}.
+		\end{equation*}
+			where $i=0,\ldots, m_{h-1}$, $j=1,\ldots,m_{h}$.
+	\item The first hidden layer
+		\begin{equation*}
+		\Delta \omega_{pq}^{1} =\eta\delta_{q}^{1}x_{p}= \eta\left(\sum_{r=1}^{m_{2}}\delta_{r}^{2}\omega_{qr}^{2}\right)y_{q}^{1}(1-y_{q}^{1})x_{p}.
+		\end{equation*}
+			where $p=0,\ldots, n$, $k=1,\ldots,m_{1}$.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
